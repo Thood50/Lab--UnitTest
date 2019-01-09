@@ -18,41 +18,57 @@ namespace UnitTesting
         }//closing FirstLoadUI
 
         static void Interface(string user, string balance)
-        {
-            Console.WriteLine("Please select what you would like to do.");
-            Console.WriteLine("1. View Balance");
-            Console.WriteLine("2. Withdrawal");
-            Console.WriteLine("3. Deposit");
-            Console.WriteLine("4. Exit");
+        {   
+            
+            try
+            {
+                Console.WriteLine("Please select what you would like to do.");
+                Console.WriteLine("1. View Balance");
+                Console.WriteLine("2. Withdrawal");
+                Console.WriteLine("3. Deposit");
+                Console.WriteLine("4. Exit");
 
-            string input = Console.ReadLine();
+                string input = Console.ReadLine();
 
-            if(input == "1")
-            {
-                string newBalance = Balance(user, balance);
-                Console.WriteLine($"Your balance is currently {newBalance}!");
-                Continue(user, newBalance);
+                if (input == "1")
+                {
+                    string newBalance = Balance(user, balance);
+                    Console.WriteLine($"Your balance is currently {newBalance}!");
+                    Continue(user, newBalance);
+                }
+                if (input == "2")
+                {
+                    Console.WriteLine("How much would you like to withdraw?");
+                    string withdrawal = Console.ReadLine();
+                    string newBalance = Withdraw(balance, withdrawal);
+                    Console.WriteLine($"You Withdrew {withdrawal}, your new balance is {newBalance}!");
+                    Continue(user, newBalance);
+                }
+                if (input == "3")
+                {
+                    Console.WriteLine("How much are you depositing?");
+                    string deposit = Console.ReadLine();
+                    string newBalance = Deposit(balance, deposit);
+                    Console.WriteLine($"You Deposited {deposit}, your new balance is {newBalance}!");
+                    Continue(user, newBalance);
+                }
+                if (input == "4")
+                {
+                    Environment.Exit(1);
+                }
+                else
+                {
+                    Console.WriteLine($"Inproper input");
+                    Interface(user, balance);
+                }
+                
             }
-            if(input == "2")
+
+            catch (FormatException e)
             {
-                Console.WriteLine("How much would you like to withdraw?");
-                string withdrawal = Console.ReadLine();
-                string newBalance = Withdraw(balance, withdrawal);
-                Console.WriteLine($"You Withdrew {withdrawal}, your new balance is {newBalance}!");
-                Continue(user, newBalance);
+                Console.WriteLine(e.Message);
             }
-            if(input == "3")
-            {
-                Console.WriteLine("How much are you depositing?");
-                string deposit = Console.ReadLine();
-                string newBalance = Deposit(balance, deposit);
-                Console.WriteLine($"You Deposited {deposit}, your new balance is {newBalance}!");
-                Continue(user, newBalance);
-            }
-            else
-            {
-                //close console
-            }
+            
         }//closing Inferface
 
         public static string Balance(string user, string balance)
