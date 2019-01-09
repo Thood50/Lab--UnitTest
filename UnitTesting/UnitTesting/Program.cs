@@ -2,7 +2,7 @@
 
 namespace UnitTesting
 {
-    class Program
+   public class Program
     {
         static void Main(string[] args)
         {
@@ -43,19 +43,21 @@ namespace UnitTesting
             }
         }//closing Inferface
 
-        static void Balance()
+        public static string Balance(string user, string balance)
         {
-
+            string response = $"{user} your balance is ${balance}";
+            return response;
         }//closing Balance
 
-        static void Withdraw()
+        public static string Withdraw(string balance, string amount)
         {
-
+            int response = Convert.ToInt32(balance) - Convert.ToInt32(amount);
+            return response.ToString();
         }//closing Withdraw
 
-        static void Deposit()
+        public static void Deposit(string balance, string amount)
         {
-
+            
         }//closing Deposit
     }
 }
