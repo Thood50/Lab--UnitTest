@@ -15,7 +15,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestingWithdrawMethod()
         {
-            Assert.Equal("5",Program.Withdraw("10", "5"));
+            Assert.Equal("5",Program.Withdraw("Tyler", "10", "5"));
         }
 
         [Fact]
@@ -23,5 +23,7 @@ namespace XUnitTestProject
         {
             Assert.Equal("15", Program.Deposit("10", "5"));
         }
+
+        
     }
 }
