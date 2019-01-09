@@ -39,7 +39,10 @@ namespace UnitTesting
             if(input == "3")
             {
                 Console.WriteLine("How much are you depositing?");
-                Deposit(balance, Console.ReadLine());                
+                string deposit = Console.ReadLine();
+                string newBalance = Deposit(balance, deposit);
+                Console.WriteLine($"You Deposited {deposit}, your new balance is {newBalance}!");
+                Continue(user, newBalance);
             }
             else
             {
@@ -64,5 +67,20 @@ namespace UnitTesting
             int response = Convert.ToInt32(balance) + Convert.ToInt32(amount);
             return response.ToString();
         }//closing Deposit
+
+        public static string Continue(string user, string balance)
+        {
+            Console.WriteLine("Would you like to do something else? Y/N");
+            string input = Console.ReadLine();
+            if(input == "Y" || input == "y")
+            {
+                Interface(user, balance);
+            }
+            else
+            {
+                //close console
+            }
+
+        }//closing Continue
     }
 }
