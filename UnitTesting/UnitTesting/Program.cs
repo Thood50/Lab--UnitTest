@@ -6,16 +6,18 @@ namespace UnitTesting
     {
         static void Main(string[] args)
         {
-            
+            string startingBalance = "1000";
+            string currentUser = "Tyler";
+            FirstLoadUI(currentUser, startingBalance);
         }//closing Main
 
-        static void FirstLoadUI(string user)
+        static void FirstLoadUI(string user, string currentBalance)
         {
             Console.WriteLine($"Hello {user}, welcome back!");
-            Interface();
+            Interface(user, currentBalance);
         }//closing FirstLoadUI
 
-        static void Interface()
+        static void Interface(string user, string balance)
         {
             Console.WriteLine("Please select what you would like to do.");
             Console.WriteLine("1. View Balance");
@@ -27,15 +29,17 @@ namespace UnitTesting
 
             if(input == "1")
             {
-                //call view balance method
+                Balance(user, balance);
             }
             if(input == "2")
             {
-                //call withdraw method
+                Console.WriteLine("How much would you like to withdraw?");
+                Withdraw(balance, Console.ReadLine());
             }
             if(input == "3")
             {
-                //call deposit method
+                Console.WriteLine("How much are you depositing?");
+                Deposit(balance, Console.ReadLine());                
             }
             else
             {
