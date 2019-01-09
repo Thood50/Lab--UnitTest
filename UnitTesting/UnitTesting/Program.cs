@@ -29,12 +29,17 @@ namespace UnitTesting
 
             if(input == "1")
             {
-                Balance(user, balance);
+                string newBalance = Balance(user, balance);
+                Console.WriteLine($"Your balance is currently {newBalance}!");
+                Continue(user, newBalance);
             }
             if(input == "2")
             {
                 Console.WriteLine("How much would you like to withdraw?");
-                Withdraw(balance, Console.ReadLine());
+                string withdrawal = Console.ReadLine();
+                string newBalance = Withdraw(balance, withdrawal);
+                Console.WriteLine($"You Withdrew {withdrawal}, your new balance is {newBalance}!");
+                Continue(user, newBalance);
             }
             if(input == "3")
             {
