@@ -55,9 +55,10 @@ namespace UnitTesting
             return response.ToString();
         }//closing Withdraw
 
-        public static void Deposit(string balance, string amount)
+        public static string Deposit(string balance, string amount)
         {
-            
+            int response = Convert.ToInt32(balance) + Convert.ToInt32(amount);
+            return response.ToString();
         }//closing Deposit
     }
 }

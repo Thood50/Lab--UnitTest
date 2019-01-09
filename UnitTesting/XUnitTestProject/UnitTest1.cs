@@ -17,5 +17,11 @@ namespace XUnitTestProject
         {
             Assert.Equal("5",Program.Withdraw("10", "5"));
         }
+
+        [Fact]
+        public void TestingDepositMethod()
+        {
+            Assert.Equal("15", Program.Deposit("10", "5"));
+        }
     }
 }
