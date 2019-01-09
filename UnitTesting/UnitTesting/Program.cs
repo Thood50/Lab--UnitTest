@@ -57,7 +57,7 @@ namespace UnitTesting
 
         public static string Balance(string user, string balance)
         {
-            string response = $"{user} your balance is ${balance}";
+            string response = $"{balance}";
             return response;
         }//closing Balance
 
