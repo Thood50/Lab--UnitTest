@@ -68,7 +68,7 @@ namespace UnitTesting
             return response.ToString();
         }//closing Deposit
 
-        public static string Continue(string user, string balance)
+        public static void Continue(string user, string balance)
         {
             Console.WriteLine("Would you like to do something else? Y/N");
             string input = Console.ReadLine();
