@@ -9,7 +9,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestingBalanceMethod()
         {
-            Assert.Equal("Tyler your balance is $10",Program.Balance("Tyler", "10"));
+            Assert.Equal("10",Program.Balance("Tyler", "10"));
         }
 
         [Fact]
@@ -22,6 +22,27 @@ namespace XUnitTestProject
         public void TestingDepositMethod()
         {
             Assert.Equal("15", Program.Deposit("10", "5"));
+        }
+
+        [Theory]
+        [InlineData("Brett", "100")]
+        public void TheoryTestBalace(string user, string balance)
+        {
+            Assert.Equal("100", Program.Balance(user, balance));
+        }
+
+        [Theory]
+        [InlineData("Brett", "100", "50")]
+        public void TheoryTestWithdraw(string user, string balance, string amount)
+        {
+            Assert.Equal("50", Program.Withdraw(user, balance, amount));
+        }
+
+        [Theory]
+        [InlineData("100", "50")]
+        public void TheoryTestDeposit(string balance, string amount)
+        {
+            Assert.Equal("150", Program.Deposit(balance, amount));
         }
 
         
