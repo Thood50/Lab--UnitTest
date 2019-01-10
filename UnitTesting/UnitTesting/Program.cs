@@ -1,38 +1,4 @@
-# Lab--UnitTest
-
-<h1>Welcome to the ATM:</h1>
-
-<h2>Summary:</h2>
-
-The goal of this is for the user ("Tyler") to check and withdraw/deposit into his awesome bank via this ATM!
-
-![ATM in Action](./ATMCapture.PNG)
-
-<h2>Setup:</h2>
-
--Open VS community  
--Create new project  
--Go to File  
--New  
--New Project  
--In the window on the left you will see a .NET Core option under Visual C# make sure you have that selected  
--Now in the middle section select Console App (.NET Core)  
--Next in the bottom change the name to your choice and change path if you want and then click "Ok"  
--Next click view  
--Then Solution Explorer  
--If it wasnt already there it will open a tab on the right side showing your Solution Explorer  
--Next click on the tiny folder tab in the Solution explorer tab the change to Solution Explorer - Folder View  
--Navigate to Program.cs file and double click to open it  
--Once you have that open copy and paste the source code below into the Program.cs file  
--Hit control S to save the source code you pasted into your file  
--Now go back up to the Solution Explorer - Folder View and hit the little folder tab to change back to the just the Solution Explorer  
--Now its time to run the code in the top nav bar hit Debug  
--Then Click Start Debug to get access to Tylers money!  
-
-
-<h2>Source Code:</h2>
-
-    using System;
+﻿using System;
 
 namespace UnitTesting
 {
